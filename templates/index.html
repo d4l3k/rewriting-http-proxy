@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rewriting HTTP Proxy</title>
+</head>
+<body>
+  <h1>Rewriting HTTP Proxy</h1>
+
+  <h2>URL</h2>
+  <form action="view">
+    <p>TODO, currently doesn't work.</p>
+    <input type="text" name="url"/>
+    <button type="submit">View</button>
+  </form>
+
+  <h2>Rules</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Match</th>
+        <th>Replace With</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range . }}
+      <tr>
+        <td>{{ .Match }}</td>
+        <td>{{ .Replace }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+  <form action="/" method="post">
+    <label>Match</label>
+    <input type="text" name="match"/>
+    <label>Replace</label>
+    <input type="text" name="replace"/>
+    <button type="submit">Add Rule</button>
+  </form>
+</body>
+</html>
